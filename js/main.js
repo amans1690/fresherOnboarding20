@@ -1,9 +1,24 @@
-function fresherOnboarding(){
-    var haha = 1;
-    return function(a){
-        return haha+a;
-    }
+//Closure Example
+const makeCounter = function(){
+    let counter = 0;
+    return function(){
+        return counter++;
+    };
 };
 
-var haha = fresherOnboarding();
-console.log('yup: ', haha());
+let counter = makeCounter();
+counter();
+
+
+//Currying Example
+const sum = function(a){
+    return function(b){
+        return function(c){
+            return a + b +c;
+        };
+    };
+};
+
+sum(1)(2)(3);
+
+
